@@ -18,14 +18,14 @@ swagger = Swagger(libsearch)
 run_with_ngrok(libsearch)
 
 
-@app.route('/')
-@app.route('/books')
+@libsearch.route('/')
+@libsearch.route('/books')
 def showBooks():
     books = session.query(Book).all()
     return render_template("books.html", books=books)
 
 
-@app.route('/books/new/', methods=['GET', 'POST'])
+@libsearch.route('/books/new/', methods=['GET', 'POST'])
 def newBook():
     if request.method == 'POST':
         newBook = Book(title=request.form['name'], author=request.form['author'], genre=request.form['genre'])
@@ -36,7 +36,7 @@ def newBook():
         return render_template('newBook.html')
 
 
-@app.route("/books/<int:book_id>/edit/", methods=['GET', 'POST'])
+@libsearch.route("/books/<int:book_id>/edit/", methods=['GET', 'POST'])
 def editBook(book_id):
     editedBook = session.query(Book).filter_by(id=book_id).one()
     if request.method == 'POST':
@@ -47,7 +47,7 @@ def editBook(book_id):
         return render_template('editBook.html', book=editedBook)
 
 
-@app.route('/books/<int:book_id>/delete/', methods=['GET', 'POST'])
+@libsearch.route('/books/<int:book_id>/delete/', methods=['GET', 'POST'])
 def deleteBook(book_id):
     bookToDelete = session.query(Book).filter_by(id=book_id).one()
     if request.method == 'POST':
@@ -59,5 +59,5 @@ def deleteBook(book_id):
 
 
 if __name__ == '__main__':
-    app.debug = True
-    app.run(host='0.0.0.0', port=4996)
+    libsearch.debug = True
+    libsearch.run()
