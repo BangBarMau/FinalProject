@@ -1,16 +1,21 @@
 from flask import Flask, render_template, request, redirect, url_for
 
-app = Flask(__name__)
+libsearch = Flask(__name__)
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from BookDatabase import Base, Book
+from flask_ngrok import run_with_ngrok
+from flasgger import Swagger
+
 
 engine = create_engine('sqlite:///books-collection.db', echo=True, connect_args={"check_same_thread": False})
 Base.metadata.bind = engine
 
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
+swagger = Swagger(libsearch)
+run_with_ngrok(libsearch)
 
 
 @app.route('/')

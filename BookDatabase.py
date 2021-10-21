@@ -17,4 +17,3 @@ class Book(Base):
 engine = create_engine('sqlite:///books-collection.db', echo=True, connect_args={"check_same_thread": False})
 
 Base.metadata.create_all(engine)
-
