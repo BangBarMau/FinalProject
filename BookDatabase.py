@@ -14,6 +14,19 @@ class Book(Base):
     author = Column(String(250), nullable=False)
     genre = Column(String(250))
 
+    @property
+    def serialize(self):
+        return {
+            'title': self.title,
+            'author': self.author,
+            'genre': self.genre,
+            'id': self.id,
+
+        }
+
+
+
+
 engine = create_engine('sqlite:///books-collection.db', echo=True, connect_args={"check_same_thread": False})
 
 Base.metadata.create_all(engine)

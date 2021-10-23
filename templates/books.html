@@ -1,22 +1,41 @@
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <center><h1> LibSearch</h1></center>
+</head>
 
-
-<html>
 <body>
-   <h1>Books</h1>
-   <a href="{{url_for('newBook')}}">
-       <button>Add Boo</button>
-   </a>
-   <ol>
-       {% for book in books %}
-       <li> {{book.title}} by {{book.author}} </li>
-       <a href="{{url_for('editBook', book_id = book.id )}}">
-           Edit
-       </a>
-       <a href="{{url_for('deleteBook', book_id = book.id )}}" style="margin-left: 10px;">
-           Delete
-       </a>
-       <br> <br>
-       {% endfor %}
-   </ol>
-</body>
+    <center>
+<div class="container">
+    <div class="jumbotron">
+        <div class="page-header">
+<h1>Books</h1>
+            <hr class="my-3">
+<a href="{{url_for('newBook')}}">
+    <button>Add Book</button>
+
+</a>
+<ol>
+    {% for book in books %}
+    <li> {{book.title}} by {{book.author}} </li>
+    <a href="{{url_for('editBook', book_id = book.id )}}">
+        Edit
+
+    </a>
+    <a href="{{url_for('deleteBook', book_id = book.id )}}" style="margin-left: 10px;">
+        Delete
+    </a>
+    <br> <br>
+    {% endfor %}
+</ol>
+        </div>
+        </div>
+    </div>
+        </center>
+    </body>
 </html>

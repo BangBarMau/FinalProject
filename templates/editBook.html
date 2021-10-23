@@ -1,10 +1,34 @@
-<form action="{{ url_for('editBook',book_id = book.id)}}" method="post">
-   <div class="form-group">
-       <label for="name">Title:</label>
-       <input type="text" class="form-control" name="name" value="{{book.title }}">
-       <button type="submit"> SAVE</button>
-       <a href='{{url_for('showBooks')}}'>
-           <button>Cancel</button>
-       </a>
-   </div>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <center><h1> LibSearch</h1></center>
+    <hr>
+</head>
+<body>
+<center>
+    <div class="container">
+        <div class="jumbotron">
+            <div class="page-header">
+<form action="{{ url_for('editBook',book_id = book.id)}}" method="put">
+    <div class="form-group">
+        <center>
+        <label for="name">Title:</label>
+        <input type="text" class="form-control" name="name" value="{{book.title }}">
+        <label for="author">author:</label>
+        <input type="text" class="form-control" name="author" value="{{book.author }}">
+        <label for="genre">genre:</label>
+        <input type="text" class="form-control" name="genre" value="{{book.genre }}">
+       </center>
+        <button type="submit"> SAVE</button>
+        <a href="{{url_for('showBooks')}}"> </a>
+        <button>Cancel</button>	
+		<a href="{{url_for('showBooks')}}"></a>
+    </div>
 </form>
+            </div>
+        </div>
+    </div>
+</center>
+</body>
