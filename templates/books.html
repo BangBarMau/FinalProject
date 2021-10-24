@@ -1,31 +1,32 @@
+<!doctype html>
 <html lang="en">
-<head>
-    <title>Bootstrap Example</title>
+  <head>
+
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <center><h1> LibSearch</h1></center>
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body>
-    <center>
-<div class="container">
-    <div class="jumbotron">
-        <div class="page-header">
-<h1>Books</h1>
-            <hr class="my-3">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+	
+    <title>Library API</title>
+  </head>
+  <body style = "text-align: center; font-size: 20px; background-color: #ADD8E6">
+<div class="jumbotron text-white jumbotron-image shadow" style="background-image: url(https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bGlicmFyeSUyMGJhY2tncm91bmR8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80">
+  <div class="container">
+    <h1 class="display-4">Welcome to Library API!</h1>
+  </div>
+</div>
+<h2>Books</h2>
 <a href="{{url_for('newBook')}}">
-    <button>Add Book</button>
-
+    <button>Click here to add a book</button>
 </a>
 <ol>
     {% for book in books %}
-    <li> {{book.title}} by {{book.author}} </li>
+    <li> {{book.title}} by {{book.author}}</li>
     <a href="{{url_for('editBook', book_id = book.id )}}">
         Edit
-
     </a>
     <a href="{{url_for('deleteBook', book_id = book.id )}}" style="margin-left: 10px;">
         Delete
@@ -33,9 +34,10 @@
     <br> <br>
     {% endfor %}
 </ol>
-        </div>
-        </div>
-    </div>
-        </center>
-    </body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
 </html>

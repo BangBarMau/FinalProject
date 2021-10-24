@@ -1,39 +1,44 @@
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <center><h1> LibSearch</h1></center>
-    <hr>
-</head>
-<body><center>
-    <div class="container">
-        <div class="jumbotron">
-            <div class="page-header">
-                <h1>Add a Book</h1>
-                <form action="#" method="post">
-                    <div class="form-group">
-                        <label for="name">Title:</label>
-                        <input type="text" maxlength="100" name="name" placeholder="Name of the book">
+<!doctype html>
+<html lang="en">
+  <head>
 
-                        <label for="author">Author:</label>
-                        <input maxlength="100" name="author" placeholder="Author of the book">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-                        <label for="genre">Genre:</label>
-                        <input maxlength="100" name="genre" placeholder="Genre of the book">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+	
+    <title>Library API</title>
+  </head>
+<body style = "text-align: center; font-size: 20px; background-color: #ADD8E6">
+<div class="jumbotron text-white jumbotron-image shadow" style="background-image: url(https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bGlicmFyeSUyMGJhY2tncm91bmR8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80">
+  <div class="container">
+    <h1 class="display-4">New Book</h1>
+  </div>
+</div>
 
-                        <button type="submit">Create</button>
+<h2>Add a Book</h2>
+<form action="#" method="post">
+   <div class="form-group">
+       <label for="name">Title:</label>
+       <input type="text" maxlength="100" name="name" placeholder="Name of the book">
 
+       <label for="author">Author:</label>
+       <input maxlength="100" name="author" placeholder="Author of the book">
 
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</center>
-</body>
+       <label for="genre">Genre:</label>
+       <input maxlength="100" name="genre" placeholder="Genre of the book">
 
-
-
-
+       <button type="submit">Create</button>
+   </div>
 </form>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
