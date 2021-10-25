@@ -19,17 +19,14 @@
   </div>
 </div>
 
-<form action="{{ url_for('editBook', book_id = book.id)}}" method="post">
+<form action="{{ url_for('editBook',book_id = book.id)}}" method="post">
     <div class="form-group">
         <label for="name">Title:</label>
-        <input type="text" class="form-control" name="name" value="{{book.title}}">
-		<label for="name">Author:</label>
-        <input type="text" class="form-control" name="author" value="{{book.author}}">
-		<a href="{{url_for('showBooks')}}" method="put">
-        <button type="submit"> SAVE</button>
-		</a>
+        <input type="text" class="form-control" name="name" value="{{book.title }}">
+		<p>                                                                           <p>
+        <button type="submit" class="btn btn-primary"> SAVE</button>
         <a href="{{url_for('showBooks')}}">
-            <button> Cancel </button>
+            <button type="button" class="btn btn-primary"> Cancel </button>
         </a>
     </div>
 </form>
