@@ -39,7 +39,7 @@ def newBook():
 @libsearch.route("/books/<int:book_id>/edit/", methods=['GET', 'PUT', 'POST'])
 def editBook(book_id):
     editedBook = session.query(Book).filter_by(id=book_id).one()
-    if request.method == 'POST':
+    if request.method == 'POST' or request.method == 'PUT':
         if request.form['name']:
             editedBook.title = request.form['name']
         if request.form['author']:
