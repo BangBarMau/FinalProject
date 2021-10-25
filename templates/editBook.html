@@ -25,7 +25,7 @@
         <input type="text" class="form-control" name="name" value="{{book.title}}">
 		<label for="name">Author:</label>
         <input type="text" class="form-control" name="author" value="{{book.author}}">
-		<a href="{{url_for('showBooks')}}">
+		<a href="{{url_for('showBooks')}}" method="put">
         <button type="submit"> SAVE</button>
 		</a>
         <a href="{{url_for('showBooks')}}">

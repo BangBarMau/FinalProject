@@ -50,10 +50,10 @@ def editBook(book_id):
         return render_template('editBook.html', book=editedBook)
 
 
-@libsearch.route('/books/<int:book_id>/delete/', methods=['GET', 'DELETE'])
+@libsearch.route('/books/<int:book_id>/delete/', methods=['GET', 'POST', 'DELETE'])
 def deleteBook(book_id):
     bookToDelete = session.query(Book).filter_by(id=book_id).one()
-    if request.method == 'GET':
+    if request.method == 'POST' or request.method == 'DELETE':
         session.delete(bookToDelete)
         session.commit()
         return redirect(url_for('showBooks', book_id=book_id))
