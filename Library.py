@@ -19,7 +19,7 @@ run_with_ngrok(libsearch)
 
 
 @libsearch.route('/')
-@libsearch.route('/books', methods=['GET', 'POST', 'PUT'])
+@libsearch.route('/books', methods=['GET'])
 def showBooks():
     books = session.query(Book).all()
     return render_template("books.html", books=books)
@@ -38,12 +38,15 @@ def newBook():
 
 @libsearch.route("/books/<int:book_id>/edit/", methods=['GET', 'PUT', 'POST'])
 def editBook(book_id):
+
     editedBook = session.query(Book).filter_by(id=book_id).one()
     if request.method == 'POST' or request.method == 'PUT':
         if request.form['name']:
             editedBook.title = request.form['name']
         if request.form['author']:
             editedBook.author = request.form['author']
+        if request.form['genre']:
+            editedBook.genre = request.form['genre']
             session.commit()
             return redirect(url_for('showBooks'))
     else:

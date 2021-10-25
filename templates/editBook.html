@@ -22,9 +22,18 @@
 <form action="{{ url_for('editBook',book_id = book.id)}}" method="post">
     <div class="form-group">
         <label for="name">Title:</label>
-        <input type="text" class="form-control" name="name" value="{{book.title }}">
-		<p>                                                                           <p>
+        <input type="text" class="form-control" name="name" value="{{book.title }}" autocomplete="off">
+		<p>                                                                           <p
+		<label for="name">Author:</label>
+        <input type="text" class="form-control" name="author" value="{{book.author }}" autocomplete="off">
+		<p>                                                                           <p
+		<label for="name">Genre:</label>
+        <input type="text" class="form-control" name="genre" value="{{book.genre }}" autocomplete="off">
+			<p>                                                                           <p
+		<a href="{{url_for('showBooks')}}">	
         <button type="submit" class="btn btn-primary"> SAVE</button>
+		</a>
+			<p>                                                                           <p
         <a href="{{url_for('showBooks')}}">
             <button type="button" class="btn btn-primary"> Cancel </button>
         </a>
