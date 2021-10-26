@@ -19,7 +19,7 @@
   </div>
 </div>
 <h2 style = "text-align: center;">Books</h2>
-<a href="{{url_for('newBook')}}">
+<a href="{{url_for('addbooks')}}">
 <div class="col text-center">
     <button type="button" class="btn btn-primary">Click here to add a book</button>
 </div>
@@ -27,10 +27,10 @@
 <ol>
     {% for book in books %}
     <li> {{book.title}} by {{book.author}}</li>
-    <a href="{{url_for('editBook', book_id = book.id )}}">
+    <a href="{{url_for('editbook', book_id = book.id )}}">
         <button type="button" class="btn btn-primary">Edit</button>
     </a>
-    <a href="{{url_for('deleteBook', book_id = book.id )}}" style="margin-left: 10px;">
+    <a href="{{url_for('deletebook', book_id = book.id )}}" style="margin-left: 10px;">
         <button type="button" class="btn btn-primary">Delete</button>
     </a>
     <br> <br>
