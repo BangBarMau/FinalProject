@@ -1,16 +1,14 @@
 from flask import Flask, render_template, request, redirect, url_for, helpers
 from flask_restful import Api, Resource
 from flask.helpers import make_response
-
-libsearch = Flask(__name__)
-searchlib = Api(libsearch)
-
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from BookDatabase import Base, Book
 from flask_ngrok import run_with_ngrok
 from flasgger import Swagger
 
+libsearch = Flask(__name__)
+searchlib = Api(libsearch)
 
 engine = create_engine('sqlite:///books-collection.db', echo=True, connect_args={"check_same_thread": False})
 Base.metadata.bind = engine
@@ -19,7 +17,6 @@ DBSession = sessionmaker(bind=engine)
 session = DBSession()
 swagger = Swagger(libsearch)
 run_with_ngrok(libsearch)
-
 
 class Books(Resource):
     def get(self):
